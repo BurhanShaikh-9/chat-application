@@ -1,0 +1,29 @@
+body{
+  display: flex;
+	justify-content: center;
+  flex-direction: column;
+}
+.outerdiv{
+    background-color: rgba(2, 2, 2, 0.1);
+    color: white;
+    height: 468px;
+    border: 1px solid rgba(0, 0, 0, 0.219);
+    margin: 20px 0px 20px 0px;;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    
+  }
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #00000077;
+    border-radius: 2px;}
+
+  .innerdiv{
+    flex: auto;
+    overflow: auto;
+  }
