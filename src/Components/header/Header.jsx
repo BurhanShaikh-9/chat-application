@@ -4,15 +4,15 @@ import "./Header.css";
 
 function header(props) {
   return (
-   <div>
-  <nav class="navbar">
-  <div class="container">
-    <a class="navbar-brand" href="#">Chatting app</a>
-      <span class="navbar-brand name">
-        {props.name}
-      </span>
-  </div>
-</nav>
+    <div>
+      <nav className='navbar'>
+        <div className='container'>
+         
+            <a className='navbar-brand' href="#">Chatting app</a>
+            <span className='navbar-brand name'>{props.name}</span>
+        
+        </div>
+      </nav>
     </div>
   );
 }

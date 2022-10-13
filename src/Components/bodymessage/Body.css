@@ -1,19 +1,18 @@
-body{
- 
-  flex-direction: column;
-    display: relative;
+.bodymsg{
     height: 100%;
+    width: 100%;
     justify-content: center;
 }
 .bodyouterdiv{
     color: white;
     border: 1px solid rgba(0, 0, 0, 0.219);
-    margin: 20px 0px 20px 0px;
-    height: 626px;
+    margin: 80px 0px 20px 0px;
+    max-height: 620px;
+    height: 100%;
     display: relative;
     flex-direction: column;
-    overflow: hidden;
-    overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: auto;
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
     
   }

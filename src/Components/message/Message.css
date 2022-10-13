@@ -8,9 +8,9 @@
   }
   
   .msg-outerdiv{
-    background: #00000013;
+    background: #9f83e1;
     padding: 10px 10px 0 10px;
-    border-radius: 0 6px 6px 0;
+    border-radius: 5px 20px 20px 5px;
     max-width: 80%;
     width: auto;
     float: left;
