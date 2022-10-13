@@ -2,6 +2,13 @@ import Message from "../message/Message"
 import "./Body.css"
 
 function BodyMsg(props) {
+
+ /* const [message,setMessage] = useState('');
+  const getMessage = (msg) => {
+    setMessage(msg);
+  }*/
+
+
   return (
     <section className='bodymsg'>
       <div className='container'>

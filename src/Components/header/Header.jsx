@@ -7,10 +7,8 @@ function header(props) {
     <div>
       <nav className='navbar'>
         <div className='container'>
-            
-            <p className='navbar-brand' href="#">Chatting app</p>
+            <a className='navbar-brand' href="#">Chatting app</a>
             <span className='navbar-brand name'>{props.name}</span>
-        
         </div>
       </nav>
     </div>

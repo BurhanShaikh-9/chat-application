@@ -2,11 +2,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {useRef} from 'react';
 import "./Login.css";
 import {useNavigate} from 'react-router-dom';
-export var nameVal;
-function Login() {
 
 
- /* function pageRedirect() {
+function Login({getName}) {
+  //  getName(nameVal);
+ /* function pageReditect() {
     window.location.replace(<Home />);
   }
   const navigateToLogin = () => {
@@ -27,9 +27,14 @@ function Login() {
   const navigate = useNavigate();
   const navigateToHome = () => {
     navigate('/home');
-    nameVal = inputRef.current.value;
-    console.log('Printing in Login', nameVal)
+    getName(inputRef.current.value);
+    //nameVal = inputRef.current.value;
+    //console.log('Printing in Login', nameVal)
+    /*setvalName= inputRef.current.value;
+    console.log('Printing in login', valName)
+    var [valName, setvalName] = useState("");*/
   };
+
 
   return (
     <div className='container'>
