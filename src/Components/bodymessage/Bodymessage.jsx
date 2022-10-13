@@ -7,6 +7,7 @@ function BodyMsg(props) {
       <div className='container'>
         <div className='bodyouterdiv'>
             <div className='bodyinnerdiv'>
+                
                 <Message messagename={props.msgname}/>
                 <Message messagename={props.msgname} own={true}/>
                 <Message messagename={props.msgname}/>

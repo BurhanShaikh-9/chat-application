@@ -1,9 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useState} from 'react';
 import {useRef} from 'react';
 import "./Login.css";
 import {useNavigate} from 'react-router-dom';
-
+export var nameVal;
 function Login() {
 
 
@@ -24,11 +23,12 @@ function Login() {
   };*/
 
   const inputRef = useRef(null);
-
+  
   const navigate = useNavigate();
-  const navigateToHome = (nameVal) => {
+  const navigateToHome = () => {
     navigate('/home');
-    nameVal = console.log(inputRef.current.value);
+    nameVal = inputRef.current.value;
+    console.log('Printing in Login', nameVal)
   };
 
   return (

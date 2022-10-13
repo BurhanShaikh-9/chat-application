@@ -18,7 +18,7 @@
   }
   .messageText{
     word-break: break-all;
-    padding: 10px 10px 1px 10px;
+    padding: 10px 10px 4px 10px;
     border-radius: 10px;
     background-color: rgba(2, 2, 2, 0.4);
     color: white;

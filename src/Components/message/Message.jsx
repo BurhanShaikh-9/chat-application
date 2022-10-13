@@ -8,9 +8,9 @@ function Message(props) {
               <div className='msg-outerdiv'>
                   {props.messagename}:
                   <br/>
-                  <p className="messageText">
+                  <div className="messageText">
                     {msg}
-                  </p>
+                  </div>
               </div>
         </div>
       </div>
