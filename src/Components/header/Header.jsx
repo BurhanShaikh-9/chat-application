@@ -1,8 +1,6 @@
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Header.css"
-import {person} from "../../dummydata";
+import "./Header.css";
+
 
 function header(props) {
   return (

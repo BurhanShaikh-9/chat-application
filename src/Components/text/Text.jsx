@@ -5,7 +5,7 @@ import "./Text.css"
 
 
 function Text() {
-  return (<>
+  return (
     <section className='footer'>
       <div className='container'>
       <div className='footerdiv'> 
@@ -29,7 +29,7 @@ function Text() {
       </div>
       </div>
     </section>
-    </>
+
   );
 }
 

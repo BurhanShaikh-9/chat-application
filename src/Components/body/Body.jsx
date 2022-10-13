@@ -5,8 +5,8 @@ function Body(props) {
   return (
     <section className='body'>
       <div className='container'>
-        <div className='outerdiv'>
-            <div className='innerdiv'>
+        <div className='bodyouterdiv'>
+            <div className='bodyinnerdiv'>
                 <Message messagename={props.msgname}/>
                 <Message messagename={props.msgname} own={true}/>
                 <Message messagename={props.msgname}/>
