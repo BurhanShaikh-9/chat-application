@@ -3,8 +3,8 @@ import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import "./Text.css"
 
-
 function Text() {
+
   return (
     <section className='footer'>
       <div className='container'>
@@ -21,7 +21,7 @@ function Text() {
                 <button type="button" className="btn btn-lg btn-outline-dark">+</button>
                 </Col>
                 <Col xs={1}>
-                <button type="button" className="btn btn-lg btn-outline-dark" id='sendbutton'>Send</button>
+                <button type="button" className="btn btn-lg btn-outline-dark" id='sendbutton' >Send</button>
                 </Col>
             </Row>
           </Form>

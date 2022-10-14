@@ -5,36 +5,16 @@ import {useNavigate} from 'react-router-dom';
 
 
 function Login({getName}) {
-  //  getName(nameVal);
- /* function pageReditect() {
-    window.location.replace(<Home />);
-  }
-  const navigateToLogin = () => {
-    // 👇️ navigate to /
-    navigate('/');
-    function getInputValue(){
-   var inputVal = document.getElementById("loginInput").value;     
-  }
-  };*/
-  /*const [name, setName] = useState('');
-  const handleChange = event => {
-    setName(event.target.value);
-    console.log('value is:', event.target.value);
-  };*/
 
   const inputRef = useRef(null);
-  
   const navigate = useNavigate();
   const navigateToHome = () => {
     navigate('/home');
     getName(inputRef.current.value);
-    //nameVal = inputRef.current.value;
-    //console.log('Printing in Login', nameVal)
-    /*setvalName= inputRef.current.value;
-    console.log('Printing in login', valName)
-    var [valName, setvalName] = useState("");*/
+    /*if (getName(inputRef.current.value) === "" ){
+        return getName(inputRef.current.value) ===getName("Strangers");
+    }*/
   };
-
 
   return (
     <div className='container'>
