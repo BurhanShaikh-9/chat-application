@@ -1,32 +1,35 @@
-import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
-import Row from 'react-bootstrap/Row';
+import {useRef} from 'react';
+import {useNavigate} from 'react-router-dom';
 import "./Text.css"
 
-function Text() {
-
+function Text({getMsg}) {
+  
+  const inputRef = useRef(null);
+  const navigateToHome = () => {
+    getMsg(inputRef.current.value);
+ 
+  };
   return (
     <section className='footer'>
       <div className='container'>
-      <div className='footerdiv'> 
-        <Form>
-            <Row>
-              <Col xs={1}>
-                <button type='button' className="btn btn-lg btn-outline-dark">ESC</button>
-              </Col>
-                <Col xs={9}>
-                  <Form.Control size="lg" type="email" placeholder="Write Message" />
-                </Col>
-                <Col xs={1}>
-                <button type="button" className="btn btn-lg btn-outline-dark">+</button>
-                </Col>
-                <Col xs={1}>
-                <button type="button" className="btn btn-lg btn-outline-dark" id='sendbutton' >Send</button>
-                </Col>
-            </Row>
-          </Form>
-        
-      </div>
+        <div className='footerdiv'>
+          <form class="row g-3">
+            <div class="col-xl-1 col-sm-1">
+            <button type="submit" class="btn btn-primary mb-3">ESC</button>
+            </div>
+            <div class="col-xl-9 col-sm-9">
+
+              <input type="text" class="form-control" id="msgId" placeholder="Write Message" ref={inputRef}/>
+            </div>
+            <div class="col-xl-1 col-sm-1">
+              <button type="submit" class="btn btn-primary mb-3">+</button>
+            </div>
+            <div class="col-xl-1 col-sm-1">
+              <button type="submit" class="btn btn-primary mb-3" onClick={navigateToHome}>Send</button>
+            </div>
+          </form>
+
+        </div>
       </div>
     </section>
 

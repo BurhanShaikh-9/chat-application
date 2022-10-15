@@ -1,10 +1,14 @@
 import "./Message.css"
+import Text from "../text/Text"
+import { useState } from "react";
 
-
-
-var msg = <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis aspernatur dolores adipisci qui voluptate nobis accusantium laboriosam quas aliquam consectetur, obcaecati non earum ea quis cumque. Tenetur laborum consequatur minus.</p>
-function Message(props) {
-
+  function Message(props) {
+    const [message, setMsg] = useState('');
+    const getMsg = (hi) => {
+      setMsg(hi);
+      <Text getMsg={getMsg}></Text>
+    }
+    var msg = <p>{message}</p>
     return (
       <div className={props.own ? "message own" : "message"}>
         <div className='container'>

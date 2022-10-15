@@ -3,11 +3,6 @@ import "./Body.css"
 
 function BodyMsg(props) {
 
- /* const [message,setMessage] = useState('');
-  const getMessage = (msg) => {
-    setMessage(msg);
-  }*/
-
 
   return (
     <section className='bodymsg'>
@@ -17,9 +12,7 @@ function BodyMsg(props) {
                 
                 <Message messagename={props.msgname}/>
                 <Message messagename={props.msgname} own={true}/>
-                <Message messagename={props.msgname}/>
-                <Message messagename={props.msgname} own={true}/>
-                <Message messagename={props.msgname}/>
+       
             </div>
         </div>
       </div>
