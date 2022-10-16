@@ -21,18 +21,6 @@
     align-items: center;
 }
 
-.loginLabel {
-    flex-direction: column;
-    width: auto;
-    margin: 3%;
-}
-
-.loginInput {
-    margin: 3%;
-    border-radius: 20%;
-    width: auto;
-}
-
 .loginButton {
     margin: 3%;
 
@@ -44,7 +32,7 @@
     box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
 }
 
-/*testt*/
+
 .group {
     position: relative;
     margin: 8% 3% 3% 3%;
@@ -55,6 +43,7 @@ input {
     padding: 10px 10px 10px 5px;
     display: block;
     width: 100%;
+    color: white;
     background-color: #9f83e100;
     border: none;
     border-bottom: 1px solid #4e4e4e;
