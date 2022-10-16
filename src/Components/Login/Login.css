@@ -46,7 +46,7 @@ input {
     padding: 10px 10px 10px 5px;
     display: block;
     width: 100%;
-    color: white;
+    color:white;
     background-color: #9f83e100;
     border: none;
     border-bottom: 1px solid #4e4e4e;
@@ -57,7 +57,7 @@ input:focus {
 }
 
 label {
-    color: rgb(255, 255, 255);
+ 
     font-size: 18px;
     font-weight: normal;
     position: absolute;
@@ -73,5 +73,5 @@ input:focus~label,
 input:valid~label {
     top: -20px;
     font-size: 14px;
-    color: #ffffff;
+
 }

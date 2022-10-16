@@ -17,4 +17,6 @@
     border-radius: 40%;
     background-color: #9f83e1ce;
 }
-
+.navbar-brand:hover{
+  color: white;
+}

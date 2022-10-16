@@ -15,7 +15,7 @@ function Text({getMsg}) {
       <div class="container">
         <form class="d-flex" role="search">
           <button class="btn txtbtn" id="btun1" type="submit">Esc</button>
-          <input class="form-control typebar" type="search" placeholder="Write Message..." aria-label="Search" ref={inputRef}/>
+          <input class="form-control typebar" type="search" autocomplete="off" placeholder="Write Message..." aria-label="Search" ref={inputRef}/>
           <button class="btn txtbtn" id="btun2"type="submit">+</button>
           <button class="btn txtbtn" id="btun3" type="submit" onClick={navigateToHome}>Send</button>
         </form>
