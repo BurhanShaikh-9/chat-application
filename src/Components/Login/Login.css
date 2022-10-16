@@ -20,7 +20,10 @@
     box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
     align-items: center;
 }
-
+@media (min-width:320px) and (max-width:400px){
+    .loginOuterdiv{
+    width: 40%;}
+}
 .loginButton {
     margin: 3%;
 

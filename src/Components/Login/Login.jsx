@@ -23,8 +23,8 @@ function Login({ getName }) {
           <div className='loginInnerdiv'>
             <div class="group">
               <input type="text" required id="loginName" ref={inputRef}/>
-                <span class="highlight"></span>
-                <span class="bar"></span>
+                <span className="highlight"></span>
+                <span className="bar"></span>
                 <label>Name</label>
             </div>
             <div className='row loginButton'>

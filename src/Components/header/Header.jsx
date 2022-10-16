@@ -11,7 +11,7 @@ function Header(props) {
  
   return (
     <div>
-      <nav className='navbar'>
+      <nav className='navbar topnav'>
         <div className='container'>
             <button className='navbar-brand' onClick={navigateToLogin}>Chatting app</button>
             <span className='navbar-brand name'>{props.name}</span>

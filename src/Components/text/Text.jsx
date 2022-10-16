@@ -10,26 +10,17 @@ function Text({getMsg}) {
  
   };
   return (
-    <section className='footer'>
-      <div className='container'>
-        <div className='footerdiv'>
-          <div className="row">
-            <div className="col-sm-1 col-md-1">
-            <button type="submit" className="btn btn-primary mb-3" id='btun1'>ESC</button>
-            </div>
-            <div className="col-sm-9 col-sm-9">
-              <input type="text" className="form-control" id="msgId" placeholder="Write Message" ref={inputRef}/>
-            </div>
-            <div className="col-sm-1">
-              <button type="submit" className="btn btn-primary mb-3" id='btun2'>+</button>
-            </div>
-            <div className="col-sm-1">
-              <button type="submit" className="btn btn-primary mb-3" onClick={navigateToHome} id='btun3'>Send</button>
-            </div>
-          </div>
-        </div>
+
+    <nav class="navbar footernav">
+      <div class="container">
+        <form class="d-flex" role="search">
+          <button class="btn txtbtn" id="btun1" type="submit">Esc</button>
+          <input class="form-control typebar" type="search" placeholder="Write Message..." aria-label="Search" ref={inputRef}/>
+          <button class="btn txtbtn" id="btun2"type="submit">+</button>
+          <button class="btn txtbtn" id="btun3" type="submit" onClick={navigateToHome}>Send</button>
+        </form>
       </div>
-    </section>
+    </nav>
 
   );
 }
