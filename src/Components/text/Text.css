@@ -67,6 +67,12 @@
     }
 
   }
+  @media (min-height:748px) and (min-width:1399px) {
+    .typebar{
+      width:70vw;
+    }
+
+  }
   @media (min-height:1300px) and (min-width:1000px) {
     .typebar{
       width: 78vw;
