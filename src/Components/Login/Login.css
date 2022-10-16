@@ -1,30 +1,85 @@
-.loginOuterdiv{
-    background-color: #9f83e1;
+.loginbody {
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.loginOuterdiv {
+
+    background-color: #9f83e1ce;
     width: 30%;
     justify-content: center;
     color: white;
     border: 1px solid rgba(0, 0, 0, 0.219);
     border-radius: 10%;
-    margin: 200px 400px 0px 400px;
-    max-height: 620px;
+    margin: 20vh 30vw 4vh 30vw;
     height: 100%;
-    display: flex;
+    display: relative;
     flex-direction: column;
-    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
     align-items: center;
-}
-.loginInnerdiv{
-    align-items: center;
-}
-.loginLabel{
-    margin: 10%
-}
-.loginInput{
-    margin: 10%;
-    border-radius: 20%;
 }
 
-.loginButton{
-    margin: 10%;
-    border-color: white;
+.loginLabel {
+    flex-direction: column;
+    width: auto;
+    margin: 3%;
+}
+
+.loginInput {
+    margin: 3%;
+    border-radius: 20%;
+    width: auto;
+}
+
+.loginButton {
+    margin: 3%;
+
+}
+
+#loginbtn {
+    background-color: rgba(0, 0, 0, 0.377);
+    border-color: rgba(0, 0, 0, 0.151);
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+}
+
+/*testt*/
+.group {
+    position: relative;
+    margin: 8% 3% 3% 3%;
+}
+
+input {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100%;
+    background-color: #9f83e100;
+    border: none;
+    border-bottom: 1px solid #4e4e4e;
+}
+
+input:focus {
+    outline: none;
+}
+
+label {
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -20px;
+    font-size: 14px;
+    color: #ffffff;
 }

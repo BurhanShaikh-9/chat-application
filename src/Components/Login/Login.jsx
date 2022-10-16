@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {useRef} from 'react';
+import { useRef } from 'react';
 import "./Login.css";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
-function Login({getName}) {
+function Login({ getName }) {
 
   const inputRef = useRef(null);
   const navigate = useNavigate();
@@ -17,17 +17,20 @@ function Login({getName}) {
   };
 
   return (
-    <div className='container'>
-      <div className='loginOuterdiv'>
-        <div className='loginInnerdiv'>
-          <div className='loginLabel'>
-            <label>Enter Your Name</label>
-          </div>
-          <div className='loginInput'>
-            <input placeholder='Enter Your Name' id="loginName" ref={inputRef}></input>
-          </div>
-          <div className='loginButton'>
-            <button onClick={navigateToHome}>Enter</button>
+    <div className='loginbody'>
+      <div className='container'>
+        <div className='loginOuterdiv'>
+          <div className='loginInnerdiv'>
+            <div class="group">
+              <input type="text" required id="loginName" ref={inputRef}/>
+                <span class="highlight"></span>
+                <span class="bar"></span>
+                <label>Name</label>
+            </div>
+            <div className='row loginButton'>
+              <button type="button" class="btn btn-primary" id='loginbtn' onClick={navigateToHome}>Login</button>
+            </div>
+            
           </div>
         </div>
       </div>

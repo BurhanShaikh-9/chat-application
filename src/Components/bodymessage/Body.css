@@ -5,6 +5,7 @@
 }
 .bodyouterdiv{
     color: white;
+    background-color: #9f83e12f;
     border: 1px solid rgba(0, 0, 0, 0.219);
     margin: 2vh 0px 2vh 0px;
     max-height: 620px;
