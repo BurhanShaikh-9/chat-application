@@ -8,17 +8,18 @@ import { useState } from 'react';
 function App() {
 
   const [username, setUsername] = useState('');
-  const getName = (hi) => {
-    setUsername(hi);
-  }
+    const getName = (hi) => {
+      return hi === '' ? setUsername('Stranger') : setUsername(hi);
+    }
 
   return (
+
     <div className="App">
       <BrowserRouter>
         <Header name={username}></Header>
         <Routes>
           <Route path="/home" element={<Home msgname={username} />} />
-          <Route path="/" element={<Login getName={getName} />} />
+          <Route path="/" element={<Login getNames={getName} />} />
         </Routes>
       </BrowserRouter>
     </div>

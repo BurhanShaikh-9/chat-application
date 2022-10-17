@@ -4,16 +4,13 @@ import "./Login.css";
 import { useNavigate } from 'react-router-dom';
 
 
-function Login({ getName }) {
+function Login({ getNames }) {
 
   const inputRef = useRef(null);
   const navigate = useNavigate();
   const navigateToHome = () => {
     navigate('/home');
-    getName(inputRef.current.value);
-    /*if (getName(inputRef.current.value) === "" ){
-        return getName(inputRef.current.value) ===getName("Strangers");
-    }*/
+    getNames(inputRef.current.value);
   };
 
   return (
