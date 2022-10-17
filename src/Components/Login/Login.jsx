@@ -18,14 +18,14 @@ function Login({ getNames }) {
       <div className='container'>
         <div className='loginOuterdiv'>
           <div className='loginInnerdiv'>
-            <div class="group">
-              <input type="text" required id="loginName" ref={inputRef} autocomplete="off"/>
+            <div className="group">
+              <input type="text" required id="loginName" ref={inputRef} autoComplete="off"/>
                 <span className="highlight"></span>
                 <span className="bar"></span>
                 <label>Name</label>
             </div>
             <div className='row loginButton'>
-              <button type="button" class="btn btn-primary" id='loginbtn' onClick={navigateToHome}>Login</button>
+              <button type="button" className="btn btn-primary" id='loginbtn' onClick={navigateToHome}>Login</button>
             </div>
             
           </div>
