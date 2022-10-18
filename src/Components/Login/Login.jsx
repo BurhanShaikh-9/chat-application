@@ -13,6 +13,8 @@ function Login({ getNames }) {
     getNames(inputRef.current.value);
   };
 
+  
+
   return (
     <div className='loginbody'>
       <div className='container'>
