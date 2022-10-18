@@ -21,44 +21,53 @@ import React from "react";
   
   export default function App() {
     const [post, setPost] = React.useState(null);
-  
     React.useEffect(() => {
       axios
         .get(baseURL)
         .then((res) => {
-            setPost(res.data[0].title);
-            console.log(post);
+          setPost(res.data);
         })
         .catch(err => console.error(err));
     }, []);
-  
+    
+  function createPost() {
+    axios
+      .post(baseURL, {
+        title: "Hello World!",
+      })
+      .then((res) => {
+        console.log(res.data);
+      });
+  }
     return (
       <div>
         <h1>{post}</h1>
-
+        <button onClick={createPost}>Create Post</button>
       </div>
     );
   }*/
 
- const baseURL = "https://jsonplaceholder.typicode.com/posts/1";
+
+  /*
+ const baseURL = "https://jsonplaceholder.typicode.com/todos/1";
 
 export default function App() {
   const [post, setPost] = React.useState(null);
 
   React.useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setPost(response.data);
+    axios.get(baseURL).then((res) => {
+      setPost(res.data);
     });
   }, []);
 
-  function createPost() {
+  function updatePost() {
     axios
-      .post(baseURL, {
+      .put(baseURL, {
         title: "Hello World!",
-        body: "This is a new post."
+    
       })
-      .then((response) => {
-        setPost(response.data);
+      .then((res) => {
+        setPost(res.data);
       });
   }
 
@@ -67,8 +76,29 @@ export default function App() {
   return (
     <div>
       <h1>{post.title}</h1>
-      <p>{post.body}</p>
-      <button onClick={createPost}>Create Post</button>
+      <button onClick={updatePost}>Update Post</button>
+    </div>
+  );
+}
+*/
+const baseURL = "https://my-json-server.typicode.com/nyx-95/chat-application/db";
+
+export default function App() {
+  const [post, setPost] = React.useState(null);
+
+  React.useEffect(() => {
+    axios
+    .get(baseURL)
+    .then((res) => {setPost(res.data[0]);
+      console.log(res.data[0])});
+  }, []);
+
+  if (!post) return "No post!"
+
+  return (
+    <div>
+      <h1>{post.title}</h1>
+     
     </div>
   );
 }
