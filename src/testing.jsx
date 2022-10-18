@@ -89,8 +89,8 @@ export default function App() {
   React.useEffect(() => {
     axios
     .get(baseURL)
-    .then((res) => {setPost(res.data[0]);
-      console.log(res.data[0])});
+    .then((res) => {setPost(res.data);
+      console.log(res.data)});
   }, []);
 
   if (!post) return "No post!"
