@@ -16,6 +16,9 @@
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
   }
 
+  .d-flex{
+    max-width: 100%!important
+  }
 
   .typebar{
     
@@ -67,6 +70,14 @@
     }
 
   }
+  
+  @media (min-height:1024px) and (min-width:768px) {
+    .typebar{
+      width: 80vw;
+    }
+
+  }
+
   @media (min-height:748px) and (min-width:1399px) {
     .typebar{
       width:70vw;

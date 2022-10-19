@@ -10,15 +10,7 @@ function Login({ getNames }) {
 
   const inputRef = useRef(null);
   const navigate = useNavigate();
-  const [post, setPost] = React.useState(null);
 
-  React.useEffect(() => {
-    axios
-    .get(baseURL)
-    .then((res) => {setPost(res.data[0]);
-    });
-    
-  }, []);
 
 
   const navigateToHome = () => {
