@@ -15,32 +15,21 @@ function Login({ getNames }) {
   React.useEffect(() => {
     axios
     .get(baseURL)
-    .then((res) => {
-      setPost(res.data[0].name);
-      console.log ("printing in get", res.data[0].name)
-      });
+    .then((res) => {setPost(res.data[0]);
+    });
+    
   }, []);
 
 
   const navigateToHome = () => {
     navigate('/home');
     getNames(inputRef.current.value)
-
       axios
-      .post(baseURL,{name: inputRef.current.value},console.log("prininting in post", inputRef.current.value))
+      .post(baseURL,{name: inputRef.current.value})
       .then((res) => {
-        console.log("before setpost in post",res.data)
-        setPost(res.data.name)
-        console.log("after setpost in post",res.data.name)
-        // NOT GETTING DATA IN POST
-        console.log("before post in post",post)
-        getNames(post);
-        console.log("after post in post",post)
+        getNames(res.data.name)
       })
-
   }
-
-
 
   return (
     <div className='loginbody'>

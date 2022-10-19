@@ -1,5 +1,5 @@
-//import axios from 'axios';
-//import React from "react";
+import axios from 'axios';
+import React from "react";
 
 /*function getTodos() {
 
@@ -47,7 +47,6 @@
     );
   }*/
 
-
   /*
  const baseURL = "https://jsonplaceholder.typicode.com/todos/1";
 
@@ -80,7 +79,7 @@ export default function App() {
     </div>
   );
 }
-
+*/
 const baseURL = "https://my-json-server.typicode.com/nyx-95/chat-application/Users";
 
 export default function App() {
@@ -109,4 +108,4 @@ export default function App() {
      <button onClick={update}>click</button>
     </div>
   );
-}*/
+}
