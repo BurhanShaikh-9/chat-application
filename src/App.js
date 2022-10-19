@@ -9,7 +9,8 @@ function App() {
 
   const [username, setUsername] = useState('');
     const getName = (hi) => {
-      return hi === '' ? setUsername('Stranger') : setUsername(hi);
+      //return hi === '' ? setUsername('Stranger') : setUsername(hi);
+      setUsername(hi);
 
     }
 

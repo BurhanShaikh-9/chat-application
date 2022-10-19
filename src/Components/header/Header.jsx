@@ -14,7 +14,7 @@ function Header(props) {
       <nav className='navbar topnav'>
         <div className='container'>
             <button className='navbar-brand' onClick={navigateToLogin}>Chatting app</button>
-            <span className='navbar-brand name'>{props.name}</span>
+            <span className='navbar-brand name'>{ props.name === '' ? 'Stranger' : props.name}</span>
         </div>
       </nav>
     </div>
