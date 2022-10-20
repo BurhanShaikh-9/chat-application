@@ -12,6 +12,20 @@
         "id": 3,
         "name": "Ali"
       }
+    ],
+    "Rooms": [
+      {
+        "Roomid": 1
+
+      },
+      {
+        "Roomid": 2
+ 
+      },
+      {
+        "Roomid": 3
+
+      }
     ]
   
    
