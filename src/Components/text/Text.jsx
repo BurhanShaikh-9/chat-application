@@ -1,7 +1,7 @@
 import {useRef} from 'react';
 import {useNavigate} from 'react-router-dom';
-import "./Text.css"
-import $ from 'jquery';
+import textcss from "./Text.module.css"
+
 
 function Text({getMsg}) {
   
@@ -13,13 +13,13 @@ function Text({getMsg}) {
   };
   return (
     
-    <nav className="navbar footernav">
+    <nav className={`navbar ${textcss.footernav}`}>
       <div className="container">
-        <form className="d-flex" role="search">
-          <button className="btn txtbtn" id="btun1" type="submit">Esc</button>
-          <input className="form-control input-res typebar"  type="search" autoComplete="off" placeholder="Write Message..." aria-label="Search" ref={inputRef}/>
-          <button className="btn txtbtn" id="btun2"type="submit">+</button>
-          <button className="btn txtbtn" id="btun3" type="submit" onClick={navigateToHome}>Send</button>
+        <form className={textcss.flexs} role="search">
+          <button className={`btn ${textcss.txtbtn}`} id={textcss.btun1} type="submit">Esc</button>
+          <input className={`form-control ${textcss.typebar}`}  type="search" autoComplete="off" placeholder="Write Message..." aria-label="Search" ref={inputRef}/>
+          <button className={`btn ${textcss.txtbtn}`} id={textcss.btun2} type="submit">+</button>
+          <button className={`btn ${textcss.txtbtn}`} id={textcss.btun3} type="submit" onClick={navigateToHome}>Send</button>
         </form>
       </div>
     </nav>

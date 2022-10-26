@@ -11,11 +11,8 @@ function App() {
     const getName = (hi) => {
       //return hi === '' ? setUsername('Stranger') : setUsername(hi);
       setUsername(hi);
-
     }
-
   return (
-
     <div className="App">
       <BrowserRouter>
         <Header name={username}></Header>

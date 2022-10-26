@@ -1,18 +1,16 @@
 import Message from "../message/Message"
-import "./Body.css"
+import bodycss from "./Body.module.css"
 
 function BodyMsg(props) {
 
 
   return (
-    <section className='bodymsg'>
+    <section className={bodycss.bodymsg}>
       <div className='container'>
-        <div className='bodyouterdiv'>
-            <div className='bodyinnerdiv'>
-                
-                <Message messagename={props.msgname}/>
+        <div className={bodycss.bodyouterdiv}>
+            <div className={bodycss.bodyinnerdiv}>
                 <Message messagename={props.msgname} own={true}/>
-       
+                <Message messagename={props.msgname}/>
             </div>
         </div>
       </div>
