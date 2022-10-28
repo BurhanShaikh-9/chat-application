@@ -8,9 +8,8 @@ import { useState } from 'react';
 function App() {
 
   const [username, setUsername] = useState('');
-    const getName = (hi) => {
-      //return hi === '' ? setUsername('Stranger') : setUsername(hi);
-      setUsername(hi);
+    const getName = (name) => {
+      setUsername(name);
     }
   return (
     <div className="App">

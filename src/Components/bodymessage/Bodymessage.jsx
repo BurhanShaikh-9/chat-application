@@ -8,9 +8,8 @@ function BodyMsg(props) {
     <section className={bodycss.bodymsg}>
       <div className='container'>
         <div className={bodycss.bodyouterdiv}>
-            <div className={bodycss.bodyinnerdiv}>
-                <Message messagename={props.msgname} own={true}/>
-                <Message messagename={props.msgname}/>
+            <div className={bodycss.bodyinnerdiv}>              
+                <Message messagename={props.msgname} messagetext={props.msgtext} own={true}/>
             </div>
         </div>
       </div>
