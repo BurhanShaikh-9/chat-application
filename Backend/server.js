@@ -11,4 +11,5 @@ io.on("connection", (socket) =>{
     });
 });
 
-app.listen(3000,() => console.log("server is active..."))
+server.listen(3000,() => console.log("server is active..."))
+

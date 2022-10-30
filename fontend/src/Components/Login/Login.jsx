@@ -3,8 +3,7 @@ import { useRef } from 'react';
 import React from 'react';
 import logincss from "./Login.module.css";
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
-const baseURL = "https://my-json-server.typicode.com/nyx-95/chat-application/Users";
+
 
 function Login({ getNames }) {
 
@@ -16,11 +15,7 @@ function Login({ getNames }) {
   const navigateToHome = () => {
     navigate('/home');
     getNames(inputRef.current.value)
-      axios
-      .post(baseURL,{name: inputRef.current.value})
-      .then((res) => {
-        getNames(res.data.name)
-      })
+    
   }
 
   return (
