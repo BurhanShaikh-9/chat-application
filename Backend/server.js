@@ -1,15 +1,32 @@
-const app = require('express')();
-const server = require('http').createServer(app);
-const io = require('socket.io')(server, {})
+const express = require("express");
+const app = express();
+const http = require("http");
+const { Server } = require("socket.io");
+const cors = require("cors");
 
-io.on("connection", (socket) =>{
-    console.log("what is socket", socket)
-    console.log("socket is activated")
-    socket.on("chat", (payload) => {
-        console.log("what is payload", payload);
-        io.emit("chat", payload);
-    });
+app.use(cors());
+
+const server = http.createServer(app);
+
+const io = new Server(server, {
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  },
 });
 
-server.listen(3000,() => console.log("server is active..."))
+io.on("connection", (socket) => {
+  console.log(`User Connected: ${socket.id}`);
 
+  socket.on("join_room", (data) => {
+    socket.join(data);
+  });
+
+  socket.on("send_message", (data) => {
+    socket.to(data.room).emit("receive_message", data);
+  });
+});
+
+server.listen(3001, () => {
+  console.log("SERVER IS RUNNING on 3001");
+});

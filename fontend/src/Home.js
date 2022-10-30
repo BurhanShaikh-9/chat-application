@@ -1,22 +1,20 @@
 import BodyMsg from './Components/bodymessage/Bodymessage';
 import Text from './Components/text/Text';
 import {useState} from 'react'
-import io from "socket.io-client"
-const socket = io.connect("http://localhost:3000")
+
 
 
 function Home(props) {
-  const [chat, setChat] =  useState([]);
-
-    const [textmessage, setTextmessage] = useState('');
-    socket.emit("chat", {textmessage});
-    const gettingText = (name) => {
-      setTextmessage(name);
-    }
-
+  
+  const [textmessage, setTextmessage] = useState('');
+  const gettingText = (name) => {
+    setTextmessage(name);
+  }
+  const chatarray = [textmessage];
+  
   return (
     <div className="Home">
-      <BodyMsg msgname={props.msgname} msgtext={textmessage}></BodyMsg>
+      <BodyMsg msgname={props.msgname} msgtext={chatarray}></BodyMsg>
       <Text getMessage={gettingText}></Text>
     </div>
     
