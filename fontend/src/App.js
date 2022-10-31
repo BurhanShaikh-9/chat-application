@@ -1,5 +1,5 @@
 import './App.css';
-import Header from './Components/header/Header';
+import Header from './Components/Header/Header';
 import Login from "./Components/Login/Login";
 import Body from "./Components/Body/Body";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -18,18 +18,20 @@ function App() {
 
   
   /*get text message */
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState([]);
   const gettingText = (msgs) => {
     setMessage(msgs);
   }
 
+  /*Send text message*/
   socket.emit("send_message", {message});
 
-  const [messageReceived, setMessageReceived] = useState("");
+  /*Receive message*/
+  const [messageReceived, setMessageReceived] = useState([]);
 
   useEffect(() => {
     socket.on("receive_message", (data) => {
-      setMessageReceived(data.message);
+      setMessageReceived([data.message]);
     });
   }, [socket]);
 
