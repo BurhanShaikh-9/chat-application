@@ -1,48 +1,51 @@
 import bodycss from "./body.module.css";
 import "./Message.css"
-import { useRef, useState } from 'react';
+import { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import { useNavigate } from 'react-router-dom';
 
 
-function BodyMsg(props) {
-  const [chat, setChat] = useState([]);
-  /* setChat.map((props.msgrecieved,index)=>{
-    return(
-      <p key={index}>{chat}</p>
-      )
-    })*/
-    //setChat(props.msgrecieved)
-    /*chat.map((hi,index)=>{
-      return(
-        <p key={index}>{hi}</p>
-        )
-      })*/
+function BodyMsg({socket, username, room}) {
+
+  const navigate = useNavigate();
+
     // var msg = <p>{props.msgText}</p>
     //var rmsg = <p>{props.msgrecieved}</p>
 
-    const inputRef = useRef(null);
-
     const esc = (event) => {
       event.preventDefault();
+      navigate('/');
     };
 
     const addMedia = (event) => {
       event.preventDefault();
     };
 
-    const sendMessage = (event) => {
-      
-      if(event.keycode === '13'){
-        event.preventDefault();
-        props.getMessage(inputRef.current.value);
-        inputRef.current.value = "";
-      }else{
-      
+
+
+    const [currentMessage, setCurrentMessage] = useState("");
+    const [messageList, setMessageList] = useState([]);
+  
+    const sendMessage = async (event) => {
       event.preventDefault();
-      props.getMessage(inputRef.current.value);
-      inputRef.current.value = "";
-    }
+      if (currentMessage !== "") {
+        const messageData = {
+          room: room,
+          author: username,
+          message: currentMessage,
+        };
+  
+        await socket.emit("send_message", messageData);
+        setMessageList((list) => [...list, messageData]);
+        setCurrentMessage(" ");
+      }
     };
+  
+    useEffect(() => {
+      socket.on("receive_message", (data) => {
+        setMessageList((list) => [...list, data]);
+      });
+    }, [socket]);
 
   return (
     <section className={bodycss.bodymsg}>
@@ -50,47 +53,36 @@ function BodyMsg(props) {
         <div className={bodycss.bodyouterdiv}>
           <div className={bodycss.bodyinnerdiv}>  
 
-
-          {props.msgrecieved.map((i, index) => {
-                    return(
-                      <div className="message" key={index}>
-                      <div className="container" key={index}>
-                        <div className="msg-outerdiv" key={index}>
-                          {props.msgname === "" ? "Stranger" : props.msgname}
+          {messageList.map((messageContent, index) => {
+            return (
+                      <div className={username === messageContent.author ? "message own" : "message"} key={index}>
+                      <div className="container" >
+                        <div className="msg-outerdiv" >
+                          {username === "" ? "Stranger" : "Stranger"}
                           <br />
-                          <div className="messageText" key={index}>
-                              <p key={index}>{i}</p>
+                          <div className="messageText">
+                            <p>{messageContent.message}</p>
                           </div>
                         </div>
                       </div>
                     </div>
-                    )
-                  })}
-           
-            {props.msgText.map((j, index) => {
-                    return(
-                      <div className="message own" key={index}>
-                      <div className="container" key={index}>
-                        <div className="msg-outerdiv" key={index}>
-                          {props.msgname === "" ? "Stranger" : props.msgname}
-                          <br />
-                          <div className="messageText" key={index}> 
-                              <p key={index}>{j}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    )
-                  })}
-          </div>
+              );
+            })}
+            
         </div>
       </div>
-
+      </div>
       <nav className={`navbar ${bodycss.footernav}`}>
       <div className="container">
         <form className={bodycss.flexs} role="search">
           <button className={`btn ${bodycss.txtbtn}`} id={bodycss.btun1} type="submit" onClick={esc}>Esc</button>
-          <input className={`form-control ${bodycss.typebar}`}  type="text" autoComplete="off" placeholder="Write Message..." ref={inputRef}/>
+          <input className={`form-control ${bodycss.typebar}`}  
+          type="text" 
+          autoComplete="off" 
+          placeholder="Write Message..." 
+          onChange={(event) => {setCurrentMessage(event.target.value);}}
+          onKeyPress={(event) => {event.key === "Enter" && sendMessage();}}
+          />
           <button className={`btn ${bodycss.txtbtn}`} id={bodycss.btun2} type="submit" onClick={addMedia}>+</button>
           <button className={`btn ${bodycss.txtbtn}`} id={bodycss.btun3} type="submit" onClick={sendMessage}>Send</button>
         </form>

@@ -3,7 +3,7 @@ import Header from './Components/Header/Header';
 import Login from "./Components/Login/Login";
 import Body from "./Components/Body/Body";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 const io = require("socket.io-client");
 const socket = io.connect("http://localhost:3001");
 
@@ -15,33 +15,18 @@ function App() {
     setUsername(name);
   }
 
-
-  
-  /*get text message */
-  const [message, setMessage] = useState([]);
-  const gettingText = (msgs) => {
-    setMessage(msgs);
+  const [room, setRoom]= useState('');
+  const getRoom = (room) => {
+    setRoom(room)
   }
-
-  /*Send text message*/
-  socket.emit("send_message", {message});
-
-  /*Receive message*/
-  const [messageReceived, setMessageReceived] = useState([]);
-
-  useEffect(() => {
-    socket.on("receive_message", (data) => {
-      setMessageReceived([data.message]);
-    });
-  }, [socket]);
 
   return (
     <div className="App">
       <BrowserRouter>
         <Header name={username}></Header>
         <Routes>
-          <Route path="/home" element={<Body msgname={username} getMessage={gettingText} msgText={[message]} msgrecieved={[messageReceived]}/>}  />
-          <Route path="/" element={<Login getNames={getName} />} />
+          <Route path="/home" socket={socket} element={<Body username={username} socket={socket} room={room}/>}  />
+          <Route path="/" element={<Login getNames={getName} getRooms={getRoom} socket={socket}/>} />
         </Routes>
       </BrowserRouter>
     </div>
