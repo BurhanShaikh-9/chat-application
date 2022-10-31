@@ -58,7 +58,7 @@ function BodyMsg({socket, username, room}) {
                       <div className={username === messageContent.author ? "message own" : "message"} key={index}>
                       <div className="container" >
                         <div className="msg-outerdiv" >
-                          {username === "" ? "Stranger" : "Stranger"}
+                          {messageContent.author}
                           <br />
                           <div className="messageText">
                             <p>{messageContent.message}</p>
