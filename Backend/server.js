@@ -28,5 +28,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(3001, () => {
-  console.log("SERVER IS RUNNING on 3001");
+  console.log("SERVER IS RUNNING");
 });

@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 function BodyMsg(props) {
 
     var msg = <p>{props.msgText}</p>
-    
+    var rmsg = <p>{props.msgrecieved}</p>
+
     const inputRef = useRef(null);
 
     const esc = (event) => {
@@ -30,12 +31,22 @@ function BodyMsg(props) {
         <div className={bodycss.bodyouterdiv}>
           <div className={bodycss.bodyinnerdiv}>  
 
-            <div className={props.own ? "message own" : "message"}>
+            <div className="message">
               <div className="container">
                 <div className="msg-outerdiv">
                   {props.msgname === "" ? "Stranger" : props.msgname}
                   <br />
                   <div className="messageText">{msg}</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="message own">
+              <div className="container">
+                <div className="msg-outerdiv">
+                  {props.msgname === "" ? "Stranger" : props.msgname}
+                  <br />
+                  <div className="messageText">{rmsg}</div>
                 </div>
               </div>
             </div>
