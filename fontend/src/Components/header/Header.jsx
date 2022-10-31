@@ -1,5 +1,5 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import "./Header.css";
+import 'bootstrap/dist/css/bootstrap.css';
+import "./header.css";
 import {useNavigate} from 'react-router-dom';
 
 function Header(props) {

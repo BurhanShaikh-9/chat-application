@@ -71,6 +71,48 @@
   }
 
 
+  /* Text css */
+
+  .txtbtn{
+    background-color: rgba(0, 0, 0, 0.377);
+    border-color: rgba(0, 0, 0, 0.151);
+    box-shadow: 0 0 2px rgba(0, 0, 0, .12), 0 2px 4px rgba(0, 0, 0, .24);
+    color: white;
+    display: sticky;
+    margin: 1%;
+  }
+   
+  .footernav{
+    background-color: #9f83e1ce;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+  }
+
+  .flexs{
+    display: flex;
+    width: 100%;
+  }
+
+  .typebar{
+    margin: 1%;
+  }
+ 
+  #btun1:hover{
+    background-color: rgba(136, 253, 253, 0.342);
+    border-color: white;
+  }
+  #btun2:hover{
+    background-color: rgba(136, 253, 253, 0.342);
+    border-color: white;
+  }
+  #btun3:hover{
+    background-color: rgba(136, 253, 253, 0.342);
+    border-color: white;
+  }
+
+
   
 
 
