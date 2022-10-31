@@ -79,7 +79,7 @@ export default function App() {
     </div>
   );
 }
-*/
+
 const baseURL = "https://my-json-server.typicode.com/nyx-95/chat-application/Users";
 
 export default function App() {
@@ -108,4 +108,4 @@ export default function App() {
      <button onClick={update}>click</button>
     </div>
   );
-}
+}*/

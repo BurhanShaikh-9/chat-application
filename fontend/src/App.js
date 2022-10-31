@@ -1,10 +1,10 @@
 import './App.css';
-import Header from './Components/Header/Header';
+import Header from './Components/header/Header';
 import Login from "./Components/Login/Login";
 import Body from "./Components/Body/Body";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState, useEffect} from 'react';
-import io from 'socket.io-client';
+const io = require("socket.io-client");
 const socket = io.connect("http://localhost:3001");
 
 
@@ -38,7 +38,7 @@ function App() {
       <BrowserRouter>
         <Header name={username}></Header>
         <Routes>
-          <Route path="/home" element={<Body msgname={username} getMessage={gettingText} msgText={message} msgrecieved={messageReceived}/>}  />
+          <Route path="/home" element={<Body msgname={username} getMessage={gettingText} msgText={[message]} msgrecieved={[messageReceived]}/>}  />
           <Route path="/" element={<Login getNames={getName} />} />
         </Routes>
       </BrowserRouter>

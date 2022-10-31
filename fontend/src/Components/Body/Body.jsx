@@ -1,10 +1,12 @@
 import bodycss from "./body.module.css";
 import "./Message.css"
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
 
 function BodyMsg(props) {
+
+  const [chat, setChat] = useState('');
 
     var msg = <p>{props.msgText}</p>
     var rmsg = <p>{props.msgrecieved}</p>
@@ -36,7 +38,9 @@ function BodyMsg(props) {
                 <div className="msg-outerdiv">
                   {props.msgname === "" ? "Stranger" : props.msgname}
                   <br />
-                  <div className="messageText">{msg}</div>
+                  <div className="messageText">
+                    {rmsg}
+                  </div>
                 </div>
               </div>
             </div>
@@ -46,7 +50,7 @@ function BodyMsg(props) {
                 <div className="msg-outerdiv">
                   {props.msgname === "" ? "Stranger" : props.msgname}
                   <br />
-                  <div className="messageText">{rmsg}</div>
+                  <div className="messageText"> {msg}</div>
                 </div>
               </div>
             </div>
