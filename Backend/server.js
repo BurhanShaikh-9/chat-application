@@ -34,3 +34,5 @@ io.on("connection", (socket) => {
 server.listen(3001, () => {
   console.log("SERVER RUNNING");
 });
+server.use(express.static(path.join(__dirname + "/public")))
+    
