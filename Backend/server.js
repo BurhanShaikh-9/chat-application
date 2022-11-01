@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const cors = require("cors");
+const path = require("path")
 const { Server } = require("socket.io");
 app.use(cors());
+app.use(express.static(path.join(__dirname + "./public")))
 
 const server = http.createServer(app);
 
@@ -34,5 +36,6 @@ io.on("connection", (socket) => {
 server.listen(3001, () => {
   console.log("SERVER RUNNING");
 });
-server.use(express.static(path.join(__dirname + "/public")))
+
+
     
