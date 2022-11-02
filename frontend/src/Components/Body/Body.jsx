@@ -13,11 +13,10 @@ function BodyMsg({socket, username, room}) {
     //var rmsg = <p>{props.msgrecieved}</p>
 
     const esc = (event) => {
-      event.preventDefault();
+      navigate('/')
     };
 
     const addMedia = (event) => {
-      event.preventDefault();
     };
 
 
