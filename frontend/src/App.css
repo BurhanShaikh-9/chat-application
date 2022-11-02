@@ -1,12 +1,8 @@
 
 html,
 .App {
-  background-image: url("backgroundimg.jpg");
-  background-position:center; 
-  background-repeat: no-repeat; 
-  background-size: cover;
-  background-color: #5be6dd;
-  background-blend-mode:screen;
+  background: rgb(169,240,255);
+  background: linear-gradient(90deg, rgba(169,240,255,1) 0%, rgba(0,212,255,1) 100%);
     height: 100%;
     width: 100%;
 }

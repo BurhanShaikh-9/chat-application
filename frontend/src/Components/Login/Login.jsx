@@ -30,7 +30,7 @@ function Login(props) {
         <div className={logincss.loginOuterdiv}>
           <div className={logincss.loginInnerdiv}>
             <div className={logincss.group}>
-              <input type="text" required id="loginName" ref={inputRef} autoComplete="off" onChange={(event) => {setUsername(event.target.value);}}/>
+              <input type="text" required id="floatingInput" ref={inputRef} autoComplete="off" onChange={(event) => {setUsername(event.target.value);}}/>
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Name</label>
