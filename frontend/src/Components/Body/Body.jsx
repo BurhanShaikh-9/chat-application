@@ -14,7 +14,6 @@ function BodyMsg({socket, username, room}) {
 
     const esc = (event) => {
       event.preventDefault();
-      navigate('/');
     };
 
     const addMedia = (event) => {
@@ -37,7 +36,7 @@ function BodyMsg({socket, username, room}) {
   
         await socket.emit("send_message", messageData);
         setMessageList((list) => [...list, messageData]);
-        setCurrentMessage(" ");
+        setCurrentMessage("");
       }
     };
   
