@@ -80,7 +80,7 @@ function BodyMsg({socket, username, room}) {
           autoComplete="off" 
           placeholder="Write Message..." 
           onChange={(event) => {setCurrentMessage(event.target.value);}}
-          onKeyPress={(event) => {event.key === "Enter" && sendMessage();}}
+          onKeyPress={event => event.key === 'Enter' ? sendMessage() : null}
           />
           <button className={`btn ${bodycss.txtbtn}`} id={bodycss.btun2} type="submit" onClick={addMedia}>+</button>
           <button className={`btn ${bodycss.txtbtn}`} id={bodycss.btun3} type="submit" onClick={sendMessage}>Send</button>
