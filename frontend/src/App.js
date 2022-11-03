@@ -6,7 +6,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { useState} from 'react';
 const io = require("socket.io-client");
 const socket = io.connect("http://localhost:3001");
-
+socket.on("connect_error", (err) => {
+  console.log(`connect_error due to ${err.message}`);
+});
 
 function App() {
   /*get username*/
